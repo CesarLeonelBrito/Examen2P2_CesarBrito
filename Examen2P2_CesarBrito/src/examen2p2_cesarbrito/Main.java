@@ -102,7 +102,6 @@ public class Main extends javax.swing.JFrame {
         jt_vehiculos = new javax.swing.JTable();
         eliminar_vehiculo = new javax.swing.JButton();
         modificar_vehiculo = new javax.swing.JButton();
-        jd_listar_baterias = new javax.swing.JDialog();
         jd_mod_combustion = new javax.swing.JDialog();
         jLabel29 = new javax.swing.JLabel();
         vin_add_combustion1 = new javax.swing.JFormattedTextField();
@@ -185,18 +184,62 @@ public class Main extends javax.swing.JFrame {
         buttonGroup6 = new javax.swing.ButtonGroup();
         buttonGroup7 = new javax.swing.ButtonGroup();
         buttonGroup8 = new javax.swing.ButtonGroup();
+        jd_add_baterias = new javax.swing.JDialog();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        tf_marca = new javax.swing.JTextField();
+        tf_autonomia = new javax.swing.JTextField();
+        rb_hibrido = new javax.swing.JRadioButton();
+        rb_enchufable = new javax.swing.JRadioButton();
+        rb_electrico = new javax.swing.JRadioButton();
+        tf_capacidad = new javax.swing.JFormattedTextField();
+        tf_modulos = new javax.swing.JFormattedTextField();
+        tf_carga = new javax.swing.JFormattedTextField();
+        tf_tiempo = new javax.swing.JFormattedTextField();
+        jb_agregar_bateria = new javax.swing.JButton();
+        jd_listar_baterias = new javax.swing.JDialog();
+        eliminar_bateria = new javax.swing.JButton();
+        modificar_modificar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_baterias = new javax.swing.JTable();
+        jd_mod_baterias = new javax.swing.JDialog();
+        rb_enchufable1 = new javax.swing.JRadioButton();
+        rb_electrico1 = new javax.swing.JRadioButton();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        tf_capacidad1 = new javax.swing.JFormattedTextField();
+        jLabel65 = new javax.swing.JLabel();
+        tf_modulos1 = new javax.swing.JFormattedTextField();
+        jLabel66 = new javax.swing.JLabel();
+        tf_carga1 = new javax.swing.JFormattedTextField();
+        jLabel67 = new javax.swing.JLabel();
+        tf_tiempo1 = new javax.swing.JFormattedTextField();
+        tf_marca1 = new javax.swing.JTextField();
+        jb_modificar_bateria = new javax.swing.JButton();
+        tf_autonomia1 = new javax.swing.JTextField();
+        jLabel68 = new javax.swing.JLabel();
+        rb_hibrido1 = new javax.swing.JRadioButton();
+        jLabel69 = new javax.swing.JLabel();
+        buttonGroup9 = new javax.swing.ButtonGroup();
+        buttonGroup10 = new javax.swing.ButtonGroup();
         jToolBar1 = new javax.swing.JToolBar();
         jLabel1 = new javax.swing.JLabel();
         jb_add_combustion = new javax.swing.JButton();
         jb_add_hibrido = new javax.swing.JButton();
         jb_add_hibridoenchufable = new javax.swing.JButton();
         jb_add_electrico = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jToolBar2 = new javax.swing.JToolBar();
         jb_listar_vehiculo = new javax.swing.JButton();
         jb_listar_baterias = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jd_ensamblar_carro = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jb_listar_ensamblados = new javax.swing.JButton();
 
         jd_add_combustion.setMinimumSize(new java.awt.Dimension(812, 609));
         jd_add_combustion.setSize(new java.awt.Dimension(812, 609));
@@ -756,20 +799,6 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jd_listar_baterias.setMinimumSize(new java.awt.Dimension(873, 632));
-        jd_listar_baterias.setSize(new java.awt.Dimension(873, 632));
-
-        javax.swing.GroupLayout jd_listar_bateriasLayout = new javax.swing.GroupLayout(jd_listar_baterias.getContentPane());
-        jd_listar_baterias.getContentPane().setLayout(jd_listar_bateriasLayout);
-        jd_listar_bateriasLayout.setHorizontalGroup(
-            jd_listar_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 873, Short.MAX_VALUE)
-        );
-        jd_listar_bateriasLayout.setVerticalGroup(
-            jd_listar_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 632, Short.MAX_VALUE)
-        );
-
         jLabel29.setText("Consumo:");
 
         vin_add_combustion1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
@@ -1250,13 +1279,301 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(232, Short.MAX_VALUE))
         );
 
+        jLabel56.setText("Marca de Fabricacion:");
+
+        jLabel57.setText("Autonomia:");
+
+        jLabel58.setText("Tipo de Vehiculo:");
+
+        jLabel59.setText("Capacidad:");
+
+        jLabel60.setText("Modulos:");
+
+        jLabel61.setText("Capacidad de Carga:");
+
+        jLabel62.setText("Tiempo de Ensamblaje:");
+
+        buttonGroup9.add(rb_hibrido);
+        rb_hibrido.setText("Hibrido");
+
+        buttonGroup9.add(rb_enchufable);
+        rb_enchufable.setText("Hibrido Enchufable");
+
+        buttonGroup9.add(rb_electrico);
+        rb_electrico.setText("Electrico Puro");
+
+        tf_capacidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        tf_modulos.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        tf_carga.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        tf_tiempo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        jb_agregar_bateria.setText("Agregar");
+        jb_agregar_bateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_agregar_bateriaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_add_bateriasLayout = new javax.swing.GroupLayout(jd_add_baterias.getContentPane());
+        jd_add_baterias.getContentPane().setLayout(jd_add_bateriasLayout);
+        jd_add_bateriasLayout.setHorizontalGroup(
+            jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_add_bateriasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_agregar_bateria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jd_add_bateriasLayout.createSequentialGroup()
+                        .addComponent(jLabel56)
+                        .addGap(50, 50, 50)
+                        .addComponent(tf_marca))
+                    .addGroup(jd_add_bateriasLayout.createSequentialGroup()
+                        .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel60)
+                            .addComponent(jLabel61)
+                            .addComponent(jLabel62))
+                        .addGap(44, 44, 44)
+                        .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_autonomia, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+                            .addGroup(jd_add_bateriasLayout.createSequentialGroup()
+                                .addComponent(rb_hibrido)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_enchufable)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_electrico)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(tf_capacidad)
+                            .addComponent(tf_modulos)
+                            .addComponent(tf_carga)
+                            .addComponent(tf_tiempo))))
+                .addContainerGap())
+        );
+        jd_add_bateriasLayout.setVerticalGroup(
+            jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_add_bateriasLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(tf_marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel57)
+                    .addComponent(tf_autonomia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel58)
+                    .addComponent(rb_hibrido)
+                    .addComponent(rb_enchufable)
+                    .addComponent(rb_electrico))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel59)
+                    .addComponent(tf_capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel60)
+                    .addComponent(tf_modulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel61)
+                    .addComponent(tf_carga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_add_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(tf_tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_agregar_bateria, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(267, Short.MAX_VALUE))
+        );
+
+        eliminar_bateria.setText("Eliminar");
+        eliminar_bateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminar_bateriaActionPerformed(evt);
+            }
+        });
+
+        modificar_modificar.setText("Modificar");
+        modificar_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificar_modificarActionPerformed(evt);
+            }
+        });
+
+        jt_baterias.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Marca", "Autonomia", "Modulos", "Tiempo de Ensamblaje", "Tipo de Vehiculo"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jt_baterias);
+        if (jt_baterias.getColumnModel().getColumnCount() > 0) {
+            jt_baterias.getColumnModel().getColumn(0).setResizable(false);
+            jt_baterias.getColumnModel().getColumn(1).setResizable(false);
+            jt_baterias.getColumnModel().getColumn(2).setResizable(false);
+            jt_baterias.getColumnModel().getColumn(3).setResizable(false);
+            jt_baterias.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jd_listar_bateriasLayout = new javax.swing.GroupLayout(jd_listar_baterias.getContentPane());
+        jd_listar_baterias.getContentPane().setLayout(jd_listar_bateriasLayout);
+        jd_listar_bateriasLayout.setHorizontalGroup(
+            jd_listar_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listar_bateriasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_listar_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eliminar_bateria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+                    .addComponent(modificar_modificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jd_listar_bateriasLayout.setVerticalGroup(
+            jd_listar_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listar_bateriasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(eliminar_bateria, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(modificar_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        buttonGroup10.add(rb_enchufable1);
+        rb_enchufable1.setText("Hibrido Enchufable");
+
+        buttonGroup10.add(rb_electrico1);
+        rb_electrico1.setText("Electrico Puro");
+
+        jLabel63.setText("Tipo de Vehiculo:");
+
+        jLabel64.setText("Capacidad:");
+
+        tf_capacidad1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        jLabel65.setText("Modulos:");
+
+        tf_modulos1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        jLabel66.setText("Capacidad de Carga:");
+
+        tf_carga1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        jLabel67.setText("Tiempo de Ensamblaje:");
+
+        tf_tiempo1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
+
+        jb_modificar_bateria.setText("Agregar");
+        jb_modificar_bateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_modificar_bateriaActionPerformed(evt);
+            }
+        });
+
+        jLabel68.setText("Marca de Fabricacion:");
+
+        buttonGroup10.add(rb_hibrido1);
+        rb_hibrido1.setText("Hibrido");
+
+        jLabel69.setText("Autonomia:");
+
+        javax.swing.GroupLayout jd_mod_bateriasLayout = new javax.swing.GroupLayout(jd_mod_baterias.getContentPane());
+        jd_mod_baterias.getContentPane().setLayout(jd_mod_bateriasLayout);
+        jd_mod_bateriasLayout.setHorizontalGroup(
+            jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mod_bateriasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_modificar_bateria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jd_mod_bateriasLayout.createSequentialGroup()
+                        .addComponent(jLabel68)
+                        .addGap(50, 50, 50)
+                        .addComponent(tf_marca1))
+                    .addGroup(jd_mod_bateriasLayout.createSequentialGroup()
+                        .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel69)
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel64)
+                            .addComponent(jLabel65)
+                            .addComponent(jLabel66)
+                            .addComponent(jLabel67))
+                        .addGap(44, 44, 44)
+                        .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_autonomia1, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
+                            .addGroup(jd_mod_bateriasLayout.createSequentialGroup()
+                                .addComponent(rb_hibrido1)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_enchufable1)
+                                .addGap(18, 18, 18)
+                                .addComponent(rb_electrico1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(tf_capacidad1)
+                            .addComponent(tf_modulos1)
+                            .addComponent(tf_carga1)
+                            .addComponent(tf_tiempo1))))
+                .addContainerGap())
+        );
+        jd_mod_bateriasLayout.setVerticalGroup(
+            jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_mod_bateriasLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel68)
+                    .addComponent(tf_marca1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel69)
+                    .addComponent(tf_autonomia1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel63)
+                    .addComponent(rb_hibrido1)
+                    .addComponent(rb_enchufable1)
+                    .addComponent(rb_electrico1))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel64)
+                    .addComponent(tf_capacidad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel65)
+                    .addComponent(tf_modulos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel66)
+                    .addComponent(tf_carga1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_mod_bateriasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel67)
+                    .addComponent(tf_tiempo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jb_modificar_bateria, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(267, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
 
         jToolBar1.setRollover(true);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setText("Agregar Vehiculo:");
+        jLabel1.setText("Agregar:      ");
+        jLabel1.setToolTipText("");
         jToolBar1.add(jLabel1);
 
         jb_add_combustion.setText("Combustion");
@@ -1303,6 +1620,17 @@ public class Main extends javax.swing.JFrame {
         });
         jToolBar1.add(jb_add_electrico);
 
+        jButton1.setText("Bateria");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jButton1);
+
         jToolBar2.setRollover(true);
 
         jb_listar_vehiculo.setText("Listar Vehiculos");
@@ -1320,6 +1648,11 @@ public class Main extends javax.swing.JFrame {
         jb_listar_baterias.setFocusable(false);
         jb_listar_baterias.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jb_listar_baterias.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jb_listar_baterias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_listar_bateriasActionPerformed(evt);
+            }
+        });
         jToolBar2.add(jb_listar_baterias);
         jToolBar2.add(jSeparator1);
 
@@ -1329,11 +1662,11 @@ public class Main extends javax.swing.JFrame {
         jd_ensamblar_carro.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(jd_ensamblar_carro);
 
-        jButton1.setText("Listar Carros Ensamblados");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(jButton1);
+        jb_listar_ensamblados.setText("Listar Carros Ensamblados");
+        jb_listar_ensamblados.setFocusable(false);
+        jb_listar_ensamblados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jb_listar_ensamblados.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jb_listar_ensamblados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1832,8 +2165,150 @@ public class Main extends javax.swing.JFrame {
             jd_mod_enchufable.hide();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
-        }        
+        }
     }//GEN-LAST:event_jb_modificar_elecActionPerformed
+
+    private void jb_agregar_bateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_agregar_bateriaActionPerformed
+        // TODO add your handling code here:
+        try {
+            String marca = tf_marca.getText();
+            String autonoma = tf_autonomia.getText();;
+            String tipoVehiculo = "";
+            if (rb_electrico.isSelected()) {
+                tipoVehiculo = "Electrico Puro";
+            } else if (rb_hibrido.isSelected()) {
+                tipoVehiculo = "Hibrido";
+            } else {
+                tipoVehiculo = "Hibrido Enchufable";
+            }
+            int capacidad = Integer.parseInt(tf_capacidad.getText());
+            int modulos = Integer.parseInt(tf_modulos.getText());
+            int carga = Integer.parseInt(tf_carga.getText());
+            int tiempo = Integer.parseInt(tf_tiempo.getText());
+            Bateria x = new Bateria(marca, autonoma, tipoVehiculo, capacidad, modulos, carga, tiempo);
+            AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+            ab.cargarArchivo();
+            ab.getListaBaterias().add(x);
+            ab.escribirArchivo();
+            tf_marca.setText("");
+            tf_autonomia.setText("");
+            tf_capacidad.setText("");
+            tf_modulos.setText("");
+            tf_carga.setText("");
+            tf_tiempo.setText("");
+            jd_add_baterias.hide();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
+        }
+    }//GEN-LAST:event_jb_agregar_bateriaActionPerformed
+
+    private void jb_listar_bateriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_listar_bateriasActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) jt_baterias.getModel();
+        modelo.setRowCount(0);
+        AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+        ab.cargarArchivo();
+        for (int i = 0; i < ab.getListaBaterias().size(); i++) {
+            Bateria x = ab.getListaBaterias().get(i);
+            Object[] nuevo = {x.getMarca(), x.getAutonomia(), x.getModulos(), x.getTiempo(), x.getTipoVehiculo()};
+            modelo.addRow(nuevo);
+        }
+        jt_baterias.setModel(modelo);
+        jd_listar_baterias.setModal(true);
+        jd_listar_baterias.pack();
+        jd_listar_baterias.setLocationRelativeTo(this);
+        jd_listar_baterias.setVisible(true);
+    }//GEN-LAST:event_jb_listar_bateriasActionPerformed
+
+    private void eliminar_bateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar_bateriaActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (jt_baterias.getSelectedRow() >= 0) {
+                int po = jt_baterias.getSelectedRow();
+                DefaultTableModel modelo = (DefaultTableModel) jt_baterias.getModel();
+                modelo.removeRow(po);
+                jt_baterias.setModel(modelo);
+                AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+                ab.cargarArchivo();
+                ab.getListaBaterias().remove(po);
+                ab.escribirArchivo();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
+        }
+    }//GEN-LAST:event_eliminar_bateriaActionPerformed
+
+    private void modificar_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificar_modificarActionPerformed
+        // TODO add your handling code here:
+        try {
+            if (jt_baterias.getSelectedRow() >= 0) {
+                poBateria = jt_baterias.getSelectedRow();
+                AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+                ab.cargarArchivo();
+                Bateria x = (Bateria) ab.getListaBaterias().get(poBateria);
+                tf_marca1.setText(x.getMarca());
+                tf_autonomia1.setText(x.getAutonomia());
+                tf_capacidad1.setText(String.valueOf(x.getCapacidad()));
+                tf_modulos1.setText(String.valueOf(x.getModulos()));
+                tf_carga1.setText(String.valueOf(x.getCarga()));
+                tf_tiempo1.setText(String.valueOf(x.getTiempo()));
+                if (x.getTipoVehiculo().equals("Hibrido")) {
+                    rb_hibrido1.setSelected(true);
+                } else if (x.getTipoVehiculo().equals("Electrico Puro")) {
+                    rb_electrico1.setSelected(true);
+                } else {
+                    rb_enchufable1.setSelected(true);
+                }
+                jd_mod_baterias.setModal(true);
+                jd_mod_baterias.pack();
+                jd_mod_baterias.setLocationRelativeTo(this);
+                jd_mod_baterias.setVisible(true);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
+        }
+    }//GEN-LAST:event_modificar_modificarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        jd_add_baterias.setModal(true);
+        jd_add_baterias.pack();
+        jd_add_baterias.setLocationRelativeTo(this);
+        jd_add_baterias.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jb_modificar_bateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_modificar_bateriaActionPerformed
+        // TODO add your handling code here:
+        try {
+            String marca = tf_marca1.getText();
+            String autonoma = tf_autonomia1.getText();;
+            String tipoVehiculo = "";
+            if (rb_electrico1.isSelected()) {
+                tipoVehiculo = "Electrico Puro";
+            } else if (rb_hibrido1.isSelected()) {
+                tipoVehiculo = "Hibrido";
+            } else {
+                tipoVehiculo = "Hibrido Enchufable";
+            }
+            int capacidad = Integer.parseInt(tf_capacidad1.getText());
+            int modulos = Integer.parseInt(tf_modulos1.getText());
+            int carga = Integer.parseInt(tf_carga1.getText());
+            int tiempo = Integer.parseInt(tf_tiempo1.getText());
+            Bateria x = new Bateria(marca, autonoma, tipoVehiculo, capacidad, modulos, carga, tiempo);
+            AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+            ab.cargarArchivo();
+            ab.getListaBaterias().set(poBateria, x);
+            ab.escribirArchivo();
+            DefaultTableModel model = (DefaultTableModel) jt_baterias.getModel();
+            Object[] nuevo = {x.getMarca(), x.getAutonomia(), x.getModulos(), x.getTiempo(), x.getTipoVehiculo()};
+            model.insertRow(poBateria, nuevo);
+            model.removeRow(poBateria + 1);
+            jt_baterias.setModel(model);
+            jd_mod_enchufable.hide();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
+        }
+    }//GEN-LAST:event_jb_modificar_bateriaActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1869,6 +2344,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup10;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
@@ -1876,6 +2352,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.ButtonGroup buttonGroup7;
     private javax.swing.ButtonGroup buttonGroup8;
+    private javax.swing.ButtonGroup buttonGroup9;
     private javax.swing.JFormattedTextField cilindrada_add_combustion;
     private javax.swing.JFormattedTextField cilindrada_add_combustion1;
     private javax.swing.JFormattedTextField cilindros_add_combustion;
@@ -1904,6 +2381,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton elec_sub1;
     private javax.swing.JRadioButton elec_suv;
     private javax.swing.JRadioButton elec_suv1;
+    private javax.swing.JButton eliminar_bateria;
     private javax.swing.JButton eliminar_vehiculo;
     private javax.swing.JRadioButton enchufable_compacto;
     private javax.swing.JRadioButton enchufable_compacto1;
@@ -1979,11 +2457,26 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
@@ -1991,16 +2484,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jb_add_electrico;
     private javax.swing.JButton jb_add_hibrido;
     private javax.swing.JButton jb_add_hibridoenchufable;
+    private javax.swing.JButton jb_agregar_bateria;
     private javax.swing.JButton jb_agregar_combustion;
     private javax.swing.JButton jb_agregar_elec;
     private javax.swing.JButton jb_agregar_enchufable;
     private javax.swing.JButton jb_agregar_hibrido;
     private javax.swing.JButton jb_listar_baterias;
+    private javax.swing.JButton jb_listar_ensamblados;
     private javax.swing.JButton jb_listar_vehiculo;
+    private javax.swing.JButton jb_modificar_bateria;
     private javax.swing.JButton jb_modificar_combustion;
     private javax.swing.JButton jb_modificar_elec;
     private javax.swing.JButton jb_modificar_enchufable;
     private javax.swing.JButton jb_modificar_hibrido;
+    private javax.swing.JDialog jd_add_baterias;
     private javax.swing.JDialog jd_add_combustion;
     private javax.swing.JDialog jd_add_electrico;
     private javax.swing.JDialog jd_add_enchufable;
@@ -2008,10 +2505,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jd_ensamblar_carro;
     private javax.swing.JDialog jd_listar_baterias;
     private javax.swing.JDialog jd_listar_vehiculos;
+    private javax.swing.JDialog jd_mod_baterias;
     private javax.swing.JDialog jd_mod_combustion;
     private javax.swing.JDialog jd_mod_electrico;
     private javax.swing.JDialog jd_mod_enchufable;
     private javax.swing.JDialog jd_mod_hibrido;
+    private javax.swing.JTable jt_baterias;
     private javax.swing.JTable jt_vehiculos;
     private javax.swing.JFormattedTextField kilo_add_hibrido;
     private javax.swing.JFormattedTextField kilo_add_hibrido1;
@@ -2033,6 +2532,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField modelo_add_enchufable1;
     private javax.swing.JTextField modelo_add_hibrido;
     private javax.swing.JTextField modelo_add_hibrido1;
+    private javax.swing.JButton modificar_modificar;
     private javax.swing.JButton modificar_vehiculo;
     private javax.swing.JFormattedTextField motores_add_elec;
     private javax.swing.JFormattedTextField motores_add_elec1;
@@ -2040,8 +2540,26 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField pasajeros_add_hibrido1;
     private javax.swing.JFormattedTextField precio_add_hibrido;
     private javax.swing.JFormattedTextField precio_add_hibrido1;
+    private javax.swing.JRadioButton rb_electrico;
+    private javax.swing.JRadioButton rb_electrico1;
+    private javax.swing.JRadioButton rb_enchufable;
+    private javax.swing.JRadioButton rb_enchufable1;
+    private javax.swing.JRadioButton rb_hibrido;
+    private javax.swing.JRadioButton rb_hibrido1;
     private javax.swing.JFormattedTextField recarga_add_elec;
     private javax.swing.JFormattedTextField recarga_add_elec1;
+    private javax.swing.JTextField tf_autonomia;
+    private javax.swing.JTextField tf_autonomia1;
+    private javax.swing.JFormattedTextField tf_capacidad;
+    private javax.swing.JFormattedTextField tf_capacidad1;
+    private javax.swing.JFormattedTextField tf_carga;
+    private javax.swing.JFormattedTextField tf_carga1;
+    private javax.swing.JTextField tf_marca;
+    private javax.swing.JTextField tf_marca1;
+    private javax.swing.JFormattedTextField tf_modulos;
+    private javax.swing.JFormattedTextField tf_modulos1;
+    private javax.swing.JFormattedTextField tf_tiempo;
+    private javax.swing.JFormattedTextField tf_tiempo1;
     private javax.swing.JFormattedTextField vin_add_combustion;
     private javax.swing.JFormattedTextField vin_add_combustion1;
     private javax.swing.JFormattedTextField vin_add_elec;
@@ -2052,4 +2570,5 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField vin_add_hibrido1;
     // End of variables declaration//GEN-END:variables
     int poVehiculo;
+    int poBateria;
 }
