@@ -5,6 +5,7 @@ public class Hibrido extends Vehiculo {
     private int kilometros;
     private int pasajeros;
     private int precio;
+    private Bateria bateria;
 
     public Hibrido() {
         super();
@@ -39,6 +40,14 @@ public class Hibrido extends Vehiculo {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public Bateria getBateria() {
+        return bateria;
+    }
+
+    public void setBateria(Bateria bateria) {
+        this.bateria = bateria;
     }
 
     @Override
