@@ -9,13 +9,6 @@ package examen2p2_cesarbrito;
  *
  * @author cesar
  */
-public class Examen2P2_CesarBrito {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class AdministrarBateria {
     
 }
