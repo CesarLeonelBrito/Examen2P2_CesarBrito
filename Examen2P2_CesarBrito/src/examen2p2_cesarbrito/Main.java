@@ -9,6 +9,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         setLocationRelativeTo(null);
+        ensam = new Ensamblar(prog_bar);
     }
 
     @SuppressWarnings("unchecked")
@@ -240,7 +241,7 @@ public class Main extends javax.swing.JFrame {
         jd_ensamblar = new javax.swing.JDialog();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        prog_bar = new javax.swing.JProgressBar();
         jToolBar1 = new javax.swing.JToolBar();
         jLabel1 = new javax.swing.JLabel();
         jb_add_combustion = new javax.swing.JButton();
@@ -815,6 +816,7 @@ public class Main extends javax.swing.JFrame {
 
         jLabel29.setText("Consumo:");
 
+        vin_add_combustion1.setEditable(false);
         vin_add_combustion1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
 
         cilindrada_add_combustion1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
@@ -963,6 +965,7 @@ public class Main extends javax.swing.JFrame {
         buttonGroup6.add(hibrido_familiar1);
         hibrido_familiar1.setText("Familiar");
 
+        vin_add_hibrido1.setEditable(false);
         vin_add_hibrido1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
 
         jLabel40.setText("Carroceria:");
@@ -1062,6 +1065,7 @@ public class Main extends javax.swing.JFrame {
         buttonGroup7.add(enchufable_familiar1);
         enchufable_familiar1.setText("Familiar");
 
+        vin_add_enchufable1.setEditable(false);
         vin_add_enchufable1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
 
         jLabel43.setText("Carroceria:");
@@ -1213,6 +1217,7 @@ public class Main extends javax.swing.JFrame {
         buttonGroup8.add(elec_familiar1);
         elec_familiar1.setText("Familiar");
 
+        vin_add_elec1.setEditable(false);
         vin_add_elec1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
 
         javax.swing.GroupLayout jd_mod_electricoLayout = new javax.swing.GroupLayout(jd_mod_electrico.getContentPane());
@@ -1492,7 +1497,7 @@ public class Main extends javax.swing.JFrame {
 
         tf_tiempo1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("##########"))));
 
-        jb_modificar_bateria.setText("Agregar");
+        jb_modificar_bateria.setText("Modificar");
         jb_modificar_bateria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_modificar_bateriaActionPerformed(evt);
@@ -1675,6 +1680,11 @@ public class Main extends javax.swing.JFrame {
         jLabel70.setText("Seleccionar de ambos JTables:");
 
         jb_ensamblar.setText("Ensamblar");
+        jb_ensamblar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ensamblarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_seleccionarLayout = new javax.swing.GroupLayout(jd_seleccionar.getContentPane());
         jd_seleccionar.getContentPane().setLayout(jd_seleccionarLayout);
@@ -1713,6 +1723,12 @@ public class Main extends javax.swing.JFrame {
                     .addContainerGap(491, Short.MAX_VALUE)))
         );
 
+        jd_ensamblar.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jd_ensamblarComponentHidden(evt);
+            }
+        });
+
         jLabel71.setFont(new java.awt.Font("Dialog", 3, 48)); // NOI18N
         jLabel71.setText("Tiempo");
 
@@ -1729,7 +1745,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jd_ensamblarLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jd_ensamblarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(prog_bar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jd_ensamblarLayout.createSequentialGroup()
                         .addComponent(jLabel72)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -1741,7 +1757,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(62, 62, 62)
                 .addComponent(jLabel71)
                 .addGap(52, 52, 52)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(prog_bar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
                 .addComponent(jLabel72)
                 .addGap(15, 15, 15))
@@ -2495,7 +2511,7 @@ public class Main extends javax.swing.JFrame {
             model.insertRow(poBateria, nuevo);
             model.removeRow(poBateria + 1);
             jt_baterias.setModel(model);
-            jd_mod_enchufable.hide();
+            jd_mod_baterias.hide();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "OCURRIO UN ERROR");
         }
@@ -2505,7 +2521,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultTableModel modelo = (DefaultTableModel) jt_ensamblados.getModel();
         modelo.setRowCount(0);
-        AdministrarVehiculo av = new AdministrarVehiculo("./Vehiculos.cbm");
+        AdministrarVehiculo av = new AdministrarVehiculo("./Ensamblados.cbm");
         av.cargarArchivo();
         for (int i = 0; i < av.getListaVehiculos().size(); i++) {
             if (av.getListaVehiculos().get(i) instanceof ElectricoPuro) {
@@ -2516,17 +2532,17 @@ public class Main extends javax.swing.JFrame {
                 Hibrido x = (Hibrido) av.getListaVehiculos().get(i);
                 Object[] nuevo = {x.getModelo(), x.getMarca(), x.getVin(), "Hibrido", x.getBateria().getMarca(), x.getBateria().getModulos(), x.getBateria().getTiempo()};
                 modelo.addRow(nuevo);
-            } else if (av.getListaVehiculos().get(i) instanceof HibridoEnchufable){
+            } else if (av.getListaVehiculos().get(i) instanceof HibridoEnchufable) {
                 HibridoEnchufable x = (HibridoEnchufable) av.getListaVehiculos().get(i);
                 Object[] nuevo = {x.getModelo(), x.getMarca(), x.getVin(), "Hibrido Enchufable", x.getBateria().getMarca(), x.getBateria().getModulos(), x.getBateria().getTiempo()};
                 modelo.addRow(nuevo);
             }
         }
         jt_ensamblados.setModel(modelo);
-        jd_listar_baterias.setModal(true);
-        jd_listar_baterias.pack();
-        jd_listar_baterias.setLocationRelativeTo(this);
-        jd_listar_baterias.setVisible(true);
+        jd_listar_ensamblados.setModal(true);
+        jd_listar_ensamblados.pack();
+        jd_listar_ensamblados.setLocationRelativeTo(this);
+        jd_listar_ensamblados.setVisible(true);
     }//GEN-LAST:event_jb_listar_ensambladosActionPerformed
 
     private void jd_ensamblar_carroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jd_ensamblar_carroActionPerformed
@@ -2566,6 +2582,70 @@ public class Main extends javax.swing.JFrame {
         jd_seleccionar.setLocationRelativeTo(this);
         jd_seleccionar.setVisible(true);
     }//GEN-LAST:event_jd_ensamblar_carroActionPerformed
+
+    private void jd_ensamblarComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jd_ensamblarComponentHidden
+        // TODO add your handling code here:
+        ensam.suspend();
+        prog_bar.setValue(0);
+    }//GEN-LAST:event_jd_ensamblarComponentHidden
+
+    private void jb_ensamblarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ensamblarActionPerformed
+        // TODO add your handling code here:
+        AdministrarVehiculo av = new AdministrarVehiculo("./Vehiculos.cbm");
+        av.cargarArchivo();
+        AdministrarBateria ab = new AdministrarBateria("./Baterias.cbm");
+        ab.cargarArchivo();
+        int po1 = jt_vehiculos1.getSelectedRow();
+        int po2 = jt_baterias1.getSelectedRow();
+        if (po1 >= 0 && po2 >= 0) {
+            if (av.getListaVehiculos().get(po1) instanceof Combustion) {
+                JOptionPane.showMessageDialog(this, "No puede ser un vehiculo de combustion");
+            } else {
+                if (av.getListaVehiculos().get(po1) instanceof Hibrido && ab.getListaBaterias().get(po2).getTipoVehiculo().equals("Hibrido")) {
+                    ensam = new Ensamblar(prog_bar);
+                    ensam.setBateria(ab.getListaBaterias().get(po2));
+                    ensam.setVehiculo(av.getListaVehiculos().get(po1));
+                    try {
+                        ensam.start();
+                    } catch (Exception e) {
+                    }
+                    ensam.setAvanzar(true);
+                    jd_ensamblar.setModal(true);
+                    jd_ensamblar.pack();
+                    jd_ensamblar.setLocationRelativeTo(this);
+                    jd_ensamblar.setVisible(true);
+                } else if (av.getListaVehiculos().get(po1) instanceof HibridoEnchufable && ab.getListaBaterias().get(po2).getTipoVehiculo().equals("Hibrido Enchufable")) {
+                    ensam = new Ensamblar(prog_bar);
+                    ensam.setBateria(ab.getListaBaterias().get(po2));
+                    ensam.setVehiculo(av.getListaVehiculos().get(po1));
+                    try {
+                        ensam.start();
+                    } catch (Exception e) {
+                    }
+                    ensam.setAvanzar(true);
+                    jd_ensamblar.setModal(true);
+                    jd_ensamblar.pack();
+                    jd_ensamblar.setLocationRelativeTo(this);
+                    jd_ensamblar.setVisible(true);
+                } else if (av.getListaVehiculos().get(po1) instanceof ElectricoPuro && ab.getListaBaterias().get(po2).getTipoVehiculo().equals("Electrico Puro")) {
+                    ensam = new Ensamblar(prog_bar);
+                    ensam.setBateria(ab.getListaBaterias().get(po2));
+                    ensam.setVehiculo(av.getListaVehiculos().get(po1));
+                    try {
+                        ensam.start();
+                    } catch (Exception e) {
+                    }
+                    ensam.setAvanzar(true);
+                    jd_ensamblar.setModal(true);
+                    jd_ensamblar.pack();
+                    jd_ensamblar.setLocationRelativeTo(this);
+                    jd_ensamblar.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Deben ser el mismo tipo de vehiculo");
+                }
+            }
+        }
+    }//GEN-LAST:event_jb_ensamblarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -2735,7 +2815,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -2811,6 +2890,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField pasajeros_add_hibrido1;
     private javax.swing.JFormattedTextField precio_add_hibrido;
     private javax.swing.JFormattedTextField precio_add_hibrido1;
+    private javax.swing.JProgressBar prog_bar;
     private javax.swing.JRadioButton rb_electrico;
     private javax.swing.JRadioButton rb_electrico1;
     private javax.swing.JRadioButton rb_enchufable;
@@ -2842,4 +2922,5 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     int poVehiculo;
     int poBateria;
+    Ensamblar ensam;
 }

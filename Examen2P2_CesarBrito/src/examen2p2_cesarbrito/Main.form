@@ -1095,6 +1095,7 @@
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="vin_add_combustion1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="##########" subtype="-1" type="0"/>
             </Property>
@@ -1362,6 +1363,7 @@
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="vin_add_hibrido1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="##########" subtype="-1" type="0"/>
             </Property>
@@ -1517,6 +1519,7 @@
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="vin_add_enchufable1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="##########" subtype="-1" type="0"/>
             </Property>
@@ -1818,6 +1821,7 @@
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="vin_add_elec1">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
               <Format format="##########" subtype="-1" type="0"/>
             </Property>
@@ -2296,7 +2300,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jb_modificar_bateria">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agregar"/>
+            <Property name="text" type="java.lang.String" value="Modificar"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_modificar_bateriaActionPerformed"/>
@@ -2585,10 +2589,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Ensamblar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_ensamblarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JDialog" name="jd_ensamblar">
+      <Events>
+        <EventHandler event="componentHidden" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="jd_ensamblarComponentHidden"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -2601,7 +2611,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jProgressBar1" max="32767" attributes="0"/>
+                      <Component id="prog_bar" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -2617,7 +2627,7 @@
                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                  <Component id="jProgressBar1" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="prog_bar" min="-2" pref="41" max="-2" attributes="0"/>
                   <EmptySpace pref="254" max="32767" attributes="0"/>
                   <Component id="jLabel72" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -2639,7 +2649,7 @@
             <Property name="text" type="java.lang.String" value="Si se sale se detiene el esamblaje"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+        <Component class="javax.swing.JProgressBar" name="prog_bar">
         </Component>
       </SubComponents>
     </Container>
